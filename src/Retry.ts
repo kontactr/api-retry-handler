@@ -58,9 +58,7 @@ export async function retry(doSomething, { retry = 2 }) {
 
 const t = () => {
   return new Promise((res, rej) => {
-    console.log(total, 70);
     if (total === 5) {
-      console.log("HERE");
       res("Hello World");
     } else {
       ++total;
