@@ -19,8 +19,6 @@ function CustomError(err) {
 
 CustomError.prototype = Error.prototype;
 
-let total = 0;
-
 async function __workDone(doSomething) {
   try {
     let resp = await doSomething();
@@ -55,6 +53,8 @@ export async function retry(doSomething, { retry = 2 }) {
     }
   })();
 }
+
+let total = 0;
 
 const t = () => {
   return new Promise((res, rej) => {
